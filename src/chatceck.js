@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import { Link } from "react-router-dom";
 
-const socket = io("ws://twowaychat-backend.onrender.com");
+const socket = io("https://twowaychat-backend.onrender.com");
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
