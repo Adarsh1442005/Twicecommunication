@@ -72,8 +72,8 @@ const sendMessage = () => {
         const message = { sender:"user",text: inputMessage};
         const email=localStorage.getItem("usermail");
         socket.emit("privatemessage", {recipientId,message,email});
-        let usercode;
-        let receivercode;
+        let usercode=1;
+        let receivercode=1;
         const usererr=({message,code})=>{
             usercode=code;
             alert(message);
@@ -81,12 +81,12 @@ const sendMessage = () => {
 
 
         };
-        const receivererr=({message})=>{
+        const receivererr=({message,code})=>{
             receivercode=code;
             alert(message);
 
         };
-        socket.on("usererror",usererr);
+        socket.on("usererr",usererr);
         socket.on("receivererr",receivererr);
         if(usercode===0 || receivercode===0 ){
             return;
