@@ -88,7 +88,7 @@ const sendMessage = () => {
         };
         socket.on("usererror",usererr);
         socket.on("receivererr",receivererr);
-        if(usercode===0 || receivercode==0 ){
+        if(usercode===0 || receivercode===0 ){
             return;
         }
         else{
