@@ -63,9 +63,9 @@ const Chat = () => {
         };
     }, []);
 
-    const sendMessage = () => {
+const sendMessage = () => {
         if (inputMessage.trim() === "" || recipientId=== "") {
-            console.log("receiptent id not found");
+            alert("invalid credential enter reciptentid and type message for sending to the receiver!!");
             return;
         }
 
@@ -96,7 +96,6 @@ const Chat = () => {
         setInputMessage("");
         }
     };
-
     return (
         <div className="flex flex-col h-screen bg-gray-900 text-white p-4">
             {/* Messages Container */}
