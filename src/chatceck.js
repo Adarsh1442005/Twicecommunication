@@ -64,15 +64,37 @@ const Chat = () => {
     }, []);
 
     const sendMessage = () => {
-        if (inputMessage.trim() === "" || recipientId === "") {
-            console.log("Recipient ID not found");
+        if (inputMessage.trim() === "" || recipientId=== "") {
+            console.log("receiptent id not found");
             return;
         }
 
-        const message = { sender: "user", text: inputMessage };
-        socket.emit("privatemessage", { recipientId, message });
+        const message = { sender:"user",text: inputMessage};
+        const email=localStorage.getItem("usermail");
+        socket.emit("privatemessage", {recipientId,message,email});
+        let usercode;
+        let receivercode;
+        const usererr=({message,code})=>{
+            usercode=code;
+            alert(message);
+
+
+
+        };
+        const receivererr=({message})=>{
+            receivercode=code;
+            alert(message);
+
+        };
+        socket.on("usererror",usererr);
+        socket.on("receivererr",receivererr);
+        if(usercode===0 || receivercode==0 ){
+            return;
+        }
+        else{
         setMessages((prevMessages) => [...prevMessages, message]);
         setInputMessage("");
+        }
     };
 
     return (
