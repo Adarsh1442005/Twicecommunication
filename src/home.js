@@ -1,42 +1,58 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div className="flex flex-col min-h-screen items-center justify-center bg-gray-900 text-white p-6">
-            {/* Title Section */}
-            <h1 className="text-4xl font-bold mb-4">💬 Welcome to ChatConnect you can Chat with anyone freely Without Fear ,Your Chat is secure</h1>
-            <h1 className="text-4xl font-bold mb-4">💬 Even the Chatconnect cannot see your message Once you disconnect Everything remove!! only online Chat Possible</h1>
-            <p className="text-lg text-gray-300 mb-6">Connect and chat in real-time with friends and colleagues .</p>
+  return (
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center flex-grow px-6 text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+          🔗 Welcome to <span className="text-blue-400">DualLink</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
+          DualLink lets you connect instantly with anyone, anywhere.  
+          Your conversations are secure, private, and vanish once you disconnect.  
+          Only real-time online chat — no traces left behind.
+        </p>
 
-            {/* Action Buttons */}
-            <div className="space-x-4">
-                <Link to="/login">
-                    <button className="bg-blue-600 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">Login</button>
-                </Link>
-                <Link to="/registration">
-                    <button className="bg-green-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-600 transition">Create Account</button>
-                </Link>
-                <Link to="/logout">
-                    <button className="bg-red-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-600 transition">Logout</button>
-                </Link>
-
-                <Link to="/chat">
-                    <button className="bg-violet-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-600 transition">StartChat</button>
-                </Link>
-            </div>
-
-            {/* Online Users Section */}
-            <div className="mt-8">
-                <p className="text-gray-400">🔹 Online users:<span className="text-green-400"></span></p>
-            </div>
-
-            {/* Footer */}
-            <footer className="mt-10 text-gray-500 text-sm">
-                <p>© 2025 ChatConnect. All rights reserved.</p>
-            </footer>
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <Link to="/login">
+            <button className="bg-blue-600 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105">
+              Login
+            </button>
+          </Link>
+          <Link to="/registration">
+            <button className="bg-green-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-green-600 transition transform hover:scale-105">
+              Create Account
+            </button>
+          </Link>
+          <Link to="/logout">
+            <button className="bg-red-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-red-600 transition transform hover:scale-105">
+              Logout
+            </button>
+          </Link>
+          <Link to="/chat">
+            <button className="bg-violet-500 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-violet-600 transition transform hover:scale-105">
+              Start Chat
+            </button>
+          </Link>
         </div>
-    );
+
+        {/* Online Users Section */}
+        <div className="mt-10">
+          <p className="text-gray-400 text-lg">
+            🔹 Online users: <span className="text-green-400 font-bold">Active Now</span>
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 w-full py-4 text-center text-gray-400 text-sm">
+        <p>© 2026 DualLink. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 };
 
 export default Home;
